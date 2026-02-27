@@ -16,7 +16,7 @@ y1=A*sin(2*pi*f*t); %calcula os valores da senoide
 % fazendo a figura da senoide
 figure,plot(t,y1,':sr')
 xlabel('Tempo (s)')
-ylabel('Tens�o (V)')
+ylabel('Tensão (V)')
 title('Senoide')
 axis([-1 11 -2 2])
 
@@ -28,23 +28,23 @@ y2=Ac*cos(2*pi*fc*t); %calcula os valores da cossenoide
 % fazendo a figura da cossenoide
 figure,plot(t,y2,'-xb')
 xlabel('Tempo (s)')
-ylabel('Tens�o (V)')
+ylabel('Tensão (V)')
 title('Cossenoide')
 axis([-1 11 -1 1])
 
 %juntando tudo em uma figura
 figure,plot(t,y1,':sr',t,y2,'-xb')
 xlabel('Tempo (s)')
-ylabel('Tens�o (V)')
-title('Combina��o')
+ylabel('Tensão (V)')
+title('Combinação')
 legend('Senoide','Cossenoide')
 axis([-1 11 -2.5 2.5])
 
 %grafico 3d
 figure,plot3(t,y1,y2,'k')
 xlabel('Tempo (s)')
-ylabel('Tens�o (V)')
-zlabel('Tens�o 2 (V)')
+ylabel('Tensão (V)')
+zlabel('Tensão 2 (V)')
 title('Obra de Arte')
 
 
