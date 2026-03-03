@@ -1,0 +1,31 @@
+% Definição da variável de Laplace
+s = tf('s');
+
+% ganho estatico de 5
+% unidade de tempo é o ponto onde a função atinge 63,2% do seu ganho estatico no caso 3 pois a função atinge 5*0.632 nesse ponto
+P1 = 5/(3*s + 1);
+[y1_deg, p1_deg] = step(P1);
+figure,plot(p1_deg,y1_deg,'b',3,3.16,'rx',0.406,0.633,'rx');
+grid on;
+
+% 2% de erro no tempo de estabiliza��o 2.47
+% valor de regime 4 
+% erro estacionario Eest = 1-y = -3
+%
+
+% wn * E = 1/T
+
+T = 2.47/4; % 0.6175
+wn = (1/T)/E
+
+
+temp_pico = 0.4;
+%wn = ; % frequencia natural
+
+E = 0.5;% fator de amortecimento
+y = 4; % ganho estatico
+
+P2 = (y*(wn^2))/((s*(s+2*wn*E))+(wn^2));
+[y2_deg, p2_deg] = step(P2);
+figure,plot(p2_deg,y2_deg,'b',temp_pico,6.1,'rx',2.47,3.92,'rx');
+grid on;

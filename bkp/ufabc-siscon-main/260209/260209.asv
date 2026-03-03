@@ -1,0 +1,3 @@
+clear all; % limpa variaveis
+clc;       % limpa a janela de comandos
+close all; % fecha as figuras

@@ -1,5 +1,8 @@
 % Pacote de controle necessário no Octave
-pkg load control;
+% pkg load control;
+clear all;
+close all;
+clc;
 
 % Definição da variável de Laplace
 s = tf('s');
@@ -13,10 +16,17 @@ H = 1;
 fprintf('BEGIN ITEM a) ----------------------------------------------------------\n');
 % a) T1(s) formada com P(s) e realimentação unitária negativa (H(s) = 1)
 T1 = feedback(P, H);
+disp('T1:');
+disp(T1);
 
 polos_T1 = pole(T1);
+disp('polos');
+disp(polos_T1);
 
 zeros_T1 = zero(T1);
+disp('zeros');
+disp(zeros_T1);
+
 
 fprintf('END ITEM a) ------------------------------------------------------------\n');
 
@@ -24,10 +34,16 @@ fprintf('END ITEM a) -----------------------------------------------------------
 fprintf('\nBEGIN ITEM b) ----------------------------------------------------------\n');
 % b) T2(s) formada com P(s), K(s) e realimentação unitária negativa (H(s) = 1)
 T2 = minreal(feedback(P * K, H)); % minreal para simplificar a função de transferência, eliminando termos que se cancelam
+disp('T2:');
+disp(T2);
 
 polos_T2 = pole(T2);
+disp('polos');
+disp(polos_T2);
 
 zeros_T2 = zero(T2);
+disp('zeros');
+disp(zeros_T2);
 
 fprintf('END ITEM b) ------------------------------------------------------------\n');
 
